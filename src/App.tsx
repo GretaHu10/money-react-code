@@ -1,4 +1,3 @@
-import Layout from 'components/Layout';
 import React from 'react';
 import {
   HashRouter as Router,
@@ -6,6 +5,10 @@ import {
   Route,
   Navigate
 } from 'react-router-dom';
+import Money from 'views/Money';
+import NoMatch from 'views/NoMatch';
+import Statistics from 'views/Statistics';
+import Tags from 'views/Tags';
 
 
 function App() {
@@ -21,28 +24,5 @@ function App() {
     </Router>
   );
 }
-
-const Tags = () => (
-  <Layout>
-    <h2>标签页</h2>
-  </Layout>
-)
-const Money = () => (
-  <Layout>
-    <h2>记账页</h2>
-  </Layout>
-
-)
-
-const Statistics = () => (
-  <Layout>
-    <h2>统计页</h2>
-  </Layout>
-)
-const NoMatch = () => (
-  <h3>
-    路径写错啦
-  </h3>
-);
 
 export default App;
