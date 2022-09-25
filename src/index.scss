@@ -22,10 +22,15 @@ a {
     color: inherit;
 }
 
+button {
+    font-family: inherit;
+}
+
 body {
     font-family: $font-hei;
     font-size: 16px;
     line-height: 1.2;
+    background-color: rgb(243, 201, 34);
 }
 
 .icon {
