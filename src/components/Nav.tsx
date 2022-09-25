@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Icon from "./Icon";
-
-
 
 
 const NavWrapper = styled.nav`
@@ -15,13 +13,14 @@ line-height: 24px;
     text-align: center;
     > a {
       display: flex;
-    padding: 5px 0 3px 0;
-    flex-direction: column;
-    align-items: center;
-    .icons{
-      width: 24px;
-      height: 24px;
-    }
+      padding: 5px 0 3px 0;
+      flex-direction: column;
+      align-items: center;
+      &.active{
+        .icon{
+          fill: rgb(243, 201, 34);
+        }
+      }
     } 
   }
 }
@@ -31,24 +30,40 @@ const Nav = () => {
     <NavWrapper>
       <ul>
         <li>
-          <Link to="/tags">
+          <NavLink to="/tags" className={({ isActive, isPending }) =>
+            isActive
+              ? "active"
+              : isPending
+                ? "pending"
+                : ""
+          }>
             <Icon name="tag" />
             标签
-          </Link>
+          </NavLink>
         </li>
         <li>
-
-          <Link to="/money">
+          <NavLink to="/money" className={({ isActive, isPending }) =>
+            isActive
+              ? "active"
+              : isPending
+                ? "pending"
+                : ""
+          }>
             <Icon name="money" />
             记账
-          </Link>
+          </NavLink>
         </li>
         <li>
-
-          <Link to="/statistics">
+          <NavLink to="/statistics" className={({ isActive, isPending }) =>
+            isActive
+              ? "active"
+              : isPending
+                ? "pending"
+                : ""
+          }>
             <Icon name="chart" />
             统计
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </NavWrapper>

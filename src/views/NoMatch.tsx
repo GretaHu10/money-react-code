@@ -4,4 +4,4 @@ const NoMatch = () => (
     </h3>
 );
 
-export default NoMatch
+export default NoMatch;
