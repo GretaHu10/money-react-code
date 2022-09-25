@@ -22,7 +22,7 @@ line-height: 24px;
       }
       &.active{
         .icon{
-          fill: rgb(243, 201, 34);
+          fill: #f8d02d;
         }
       }
     } 
