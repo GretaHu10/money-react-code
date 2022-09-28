@@ -5,7 +5,7 @@ import Icon from "./Icon";
 
 const NavWrapper = styled.nav`
 background-color: white;
-box-shadow: 0 0 3px rgba(0,0,0,0.25);
+box-shadow: 0 0 3px rgba(255,255,255,1);
 line-height: 24px;
 > ul {
   display: flex;
@@ -35,36 +35,21 @@ const Nav = () => {
       <ul>
         <li>
           <NavLink to="/tags" className={({ isActive, isPending }) =>
-            isActive
-              ? "active"
-              : isPending
-                ? "pending"
-                : ""
-          }>
+            isActive ? "active" : isPending ? "pending" : ""}>
             <Icon name="tag" />
             标签
           </NavLink>
         </li>
         <li>
           <NavLink to="/money" className={({ isActive, isPending }) =>
-            isActive
-              ? "active"
-              : isPending
-                ? "pending"
-                : ""
-          }>
+            isActive ? "active" : isPending ? "pending" : ""}>
             <Icon name="money" />
             记账
           </NavLink>
         </li>
         <li>
           <NavLink to="/statistics" className={({ isActive, isPending }) =>
-            isActive
-              ? "active"
-              : isPending
-                ? "pending"
-                : ""
-          }>
+            isActive ? "active" : isPending ? "pending" : ""}>
             <Icon name="chart" />
             统计
           </NavLink>

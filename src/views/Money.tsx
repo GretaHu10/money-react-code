@@ -7,12 +7,11 @@ import styled from "styled-components";
 const CategorySection = styled.section`
 position: relative;
   > ul{
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 24px;
     display: flex;
-    justify-content: center;
+    justify-content: center;   
     > li{
-      /* border:1px solid red; */
       padding: 8px 16px;
       text-align: center;
       position: relative; 
@@ -29,7 +28,6 @@ position: relative;
     }
   }
   > span{
-    /* display: inline-flex; */
     font-size: 16px;
     position: absolute;
     right: 10px;
@@ -39,6 +37,7 @@ position: relative;
 const TagsSection = styled.section`
   background-color:white;
   padding: 12px 16px;
+  box-shadow: 0 0 3px rgba(255,255,255,0.25);
   > ol{
     margin: 0 -12px;
     > li{
@@ -60,7 +59,7 @@ const TagsSection = styled.section`
   }
 `
 const NotesSection = styled.section`
-  background-color: #f5f5f5;
+  background: #f5f5f5;
   padding: 0 16px;
   font-size: 14px;
   > label{
@@ -79,60 +78,87 @@ const NotesSection = styled.section`
   }
 `
 const NumberPadSection = styled.section`
-
+display: flex;
+flex-direction: column;
+  > .output{
+    background-color: white;
+    font-size: 36px;
+    line-height: 72px;
+    text-align: right;
+    padding: 0 16px;
+    box-shadow: inset 0 -5px 5px -5px rgba(0,0,0,0.25),
+                inset 0 5px 5px -5px rgba(0,0,0,0.25);
+  }
+  > .pad{
+    background:#f5f5f5 ;
+    display: flex;
+    flex-wrap: wrap;
+    > button{
+      text-align: center;
+      font-size: 18px;
+      width: 25%;
+      height: 64px;
+      border: none;
+      font-size: 18px;
+      box-shadow: 0 0 3px rgba(0,0,0,0.25);
+      &.ok{
+        width:50%;
+      }
+    }
+  }
 `
 function Money() {
-    return (
-        <Layout>
-            <CategorySection>
-                <ul>
-                    <li className="selected">支出</li>
-                    <li >收入</li>
-                </ul>
-                <span>取消</span>
-            </CategorySection>
-            <TagsSection>
-                <ol>
-                    <li>衣</li>
-                    <li>食</li>
-                    <li>住</li>
-                    <li>行</li>
-                </ol>
-                <button>新增标签</button>
-            </TagsSection>
-            <NotesSection>
-                <label>
-                    <span>备注：</span>
-                    <input type="text" placeholder="在这里添加备注" />
-                </label>
-            </NotesSection>
-            <NumberPadSection>
-                <div>100</div>
-                <div>
-                    <button>7</button>
-                    <button>8</button>
-                    <button>9</button>
-                    <button>
-                        <Icon name="date" />
-                    </button>
-                    <button>4</button>
-                    <button>5</button>
-                    <button>6</button>
-                    <button>
-                        <Icon name="clear" />
-                    </button>
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
-                    <button>
-                        <Icon name="back" />
-                    </button>
-                    <button>0</button>
-                    <button>.</button>
-                    <button>ok</button>
-                </div>
-            </NumberPadSection>
-        </Layout>
-    )
+  return (
+    <Layout>
+      <CategorySection>
+        <ul>
+          <li className="selected">支出</li>
+          <li >收入</li>
+        </ul>
+        <span>取消</span>
+      </CategorySection>
+      <TagsSection>
+        <ol>
+          <li>衣</li>
+          <li>食</li>
+          <li>住</li>
+          <li>行</li>
+        </ol>
+        <button>新增标签</button>
+      </TagsSection>
+      <NotesSection>
+        <label>
+          <span>备注：</span>
+          <input type="text" placeholder="在这里添加备注" />
+        </label>
+      </NotesSection>
+      <NumberPadSection>
+        <div className="output">100</div>
+        <div className="pad clearfix">
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+          <button>
+            <Icon name="date" />
+          </button>
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button>
+            <Icon name="clear" />
+          </button>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>
+            <Icon name="back" />
+          </button>
+          <button>.</button>
+          <button>0</button>
+          <button className="ok">ok</button>
+        </div>
+      </NumberPadSection>
+    </Layout>
+  )
 }
 export default Money;
