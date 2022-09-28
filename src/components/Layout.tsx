@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Category from "./Category";
-import Nav from "./Nav";
+import { Category } from "./Category";
+import { Nav } from "./Nav";
 
 const Wrapper = styled.div`
 /* border:1px solid red; */
@@ -25,4 +25,4 @@ const Layout = (props: any) => {
         </Wrapper>
     )
 }
-export default Layout;
+export { Layout };

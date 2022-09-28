@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import Icon from "./Icon";
+import { Icon } from "./Icon";
 
 
 const NavWrapper = styled.nav`
@@ -59,4 +59,4 @@ const Nav = () => {
   )
 }
 
-export default Nav;
+export { Nav };

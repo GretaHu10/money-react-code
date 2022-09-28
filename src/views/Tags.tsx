@@ -1,4 +1,4 @@
-import Layout from "components/Layout";
+import { Layout } from "components/Layout";
 
 const Tags = () => (
     <Layout>
@@ -6,4 +6,4 @@ const Tags = () => (
     </Layout>
 )
 
-export default Tags;
+export { Tags };

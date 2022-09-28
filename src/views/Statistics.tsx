@@ -1,4 +1,4 @@
-import Layout from "components/Layout";
+import { Layout } from "components/Layout";
 
 const Statistics = () => (
     <Layout>
@@ -6,4 +6,4 @@ const Statistics = () => (
     </Layout>
 )
 
-export default Statistics;
+export { Statistics };
