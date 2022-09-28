@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import Category from "./Category";
 import Nav from "./Nav";
 
 const Wrapper = styled.div`
 /* border:1px solid red; */
-min-height: 100vh;
+height: 100vh;
 display: flex;
 flex-direction: column;
 `
@@ -16,7 +17,8 @@ overflow: auto;
 const Layout = (props: any) => {
     return (
         <Wrapper>
-            <Main>
+            <Category />
+            <Main className={props.className}>
                 {props.children}
             </Main>
             <Nav />

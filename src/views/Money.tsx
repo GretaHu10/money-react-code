@@ -3,38 +3,17 @@ import Layout from "components/Layout";
 import styled from "styled-components";
 
 
-
-const CategorySection = styled.section`
-position: relative;
-  > ul{
-    margin-top: 30px;
-    font-size: 24px;
-    display: flex;
-    justify-content: center;   
-    > li{
-      padding: 8px 16px;
-      text-align: center;
-      position: relative; 
-       &.selected::after{
-        content: "";
-        display: block;
-        height: 3px;
-        background: #333;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        left: 0;
-       }
-    }
-  }
-  > span{
-    font-size: 16px;
-    position: absolute;
-    right: 10px;
-    bottom: 8px;
-  }
+const MyLayout = styled(Layout)`
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
 `
 const TagsSection = styled.section`
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
   background-color:white;
   padding: 12px 16px;
   box-shadow: 0 0 3px rgba(255,255,255,0.25);
@@ -86,7 +65,8 @@ flex-direction: column;
     line-height: 72px;
     text-align: right;
     padding: 0 16px;
-    box-shadow: inset 0 -5px 5px -5px rgba(0,0,0,0.25),
+    box-shadow: 
+    /* inset 0 -5px 5px -5px rgba(0,0,0,0.25), */
                 inset 0 5px 5px -5px rgba(0,0,0,0.25);
   }
   > .pad{
@@ -109,14 +89,7 @@ flex-direction: column;
 `
 function Money() {
   return (
-    <Layout>
-      <CategorySection>
-        <ul>
-          <li className="selected">支出</li>
-          <li >收入</li>
-        </ul>
-        <span>取消</span>
-      </CategorySection>
+    <MyLayout>
       <TagsSection>
         <ol>
           <li>衣</li>
@@ -158,7 +131,7 @@ function Money() {
           <button className="ok">ok</button>
         </div>
       </NumberPadSection>
-    </Layout>
+    </MyLayout>
   )
 }
 export default Money;
