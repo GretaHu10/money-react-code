@@ -12,17 +12,18 @@ const TagList = styled.ol`
         border-bottom: 1px solid #d5d5d9;
         margin:0 16px;
         > a{
-        padding: 12px 16px 12px 16px;        
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+            padding: 12px 16px 12px 16px;        
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            > .icon{
+                width: 1em;
+                height: 1em;
+                fill:#333;
+            }
         }
-        > .icon{
-            width: 1em;
-            height: 1em;
-            fill:#333;
-        }
+        
     }
 `
 const Button = styled.button`
@@ -49,9 +50,9 @@ function Tags() {
         <Layout>
             <TagList>
                 {tags.map(tag =>
-                    <li key={tag}>
+                    <li key={tag.id}>
                         <Link to={'/tags/' + tag}>
-                            <span>{tag}</span>
+                            <span>{tag.name}</span>
                             <Icon name="right" />
                         </Link>
                     </li>)}
