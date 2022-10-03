@@ -2,6 +2,7 @@ import { useState } from "react"
 import styled from "styled-components"
 
 const Wrapper = styled.section`
+background: #f8d02d;
 position: relative;
   > ul{
     margin-top: 30px;
