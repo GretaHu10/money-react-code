@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Category } from "./Category";
 import { Nav } from "./Nav";
 
 const Wrapper = styled.div`
@@ -12,10 +11,10 @@ flex-grow: 1;
 overflow: auto;
 `
 
+
 const Layout = (props: any) => {
     return (
         <Wrapper>
-            <Category />
             <Main className={props.className}>
                 {props.children}
             </Main>
@@ -23,4 +22,4 @@ const Layout = (props: any) => {
         </Wrapper>
     )
 }
-export { Layout };
+export { Layout }
