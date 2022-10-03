@@ -45,7 +45,7 @@ const Gap = styled.div`
 `
 
 function Tags() {
-    const { tags, setTags } = useTags()
+    const { tags } = useTags()
     return (
         <Layout>
             <TagList>
