@@ -1,5 +1,6 @@
 import { Button } from "components/Button"
 import { Icon } from "components/Icon"
+import { Input } from "components/Input"
 import { Layout } from "components/Layout"
 import { useParams } from "react-router-dom"
 import styled from "styled-components"
@@ -22,6 +23,12 @@ position: relative;
     bottom: 8px;
   }
 `
+const InputWrapper = styled.div`
+    background: white;
+    padding: 0px 16px;
+    margin-top: 8px;
+`
+
 
 
 type Params = {
@@ -34,16 +41,12 @@ const TagEdit: React.FC = (props) => {
     return (
         <Layout>
             <Wrapper>
+                <Icon name="left" />
                 <div>编辑标签</div>
-                <span>取消</span>
             </Wrapper>
-            <div>
-                <label>
-                    <span>标签名</span>
-                    <input type="text" placeholder={tag.name} />
-
-                </label>
-            </div>
+            <InputWrapper>
+                <Input label="标签名" type="text" placeholder={tag.name} />
+            </InputWrapper>
             <div>
                 <Button>删除标签</Button>
             </div>
