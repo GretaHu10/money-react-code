@@ -2,21 +2,11 @@ import { Button } from "components/Button"
 import { Icon } from "components/Icon"
 import { Input } from "components/Input"
 import { Layout } from "components/Layout"
+import { Topbar } from "components/Topbar"
 import { useParams } from "react-router-dom"
 import styled from "styled-components"
 import { useTags } from "useTags"
 
-const Topbar = styled.section`
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 30px 14px 8px 14px;
-font-size: 24px;
-background: #f8d02d;
-> .icon{
-    width: 0.75em;
-}
-`
 const InputWrapper = styled.div`
     background:white;
     padding: 0px 16px;
