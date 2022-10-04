@@ -1,12 +1,14 @@
 import { Button } from "components/Button";
 import { Icon } from "components/Icon";
 import { Layout } from "components/Layout";
+import { Topbar } from "components/Topbar";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useTags } from "useTags";
 
 
 const TagList = styled.ol`
+    margin-top: 8px;
     font-size: 16px;
     background: white;
     > li{
@@ -42,6 +44,9 @@ function Tags() {
     const { tags } = useTags()
     return (
         <Layout>
+            <Topbar>
+                <div>标签列表</div>
+            </Topbar>
             <TagList>
                 {tags.map(tag =>
                     <li key={tag.id}>
