@@ -22,8 +22,9 @@ a {
     color: inherit;
 }
 
-button {
-    font-family: inherit;
+button,
+input {
+    font: inherit;
 }
 
 :focus {

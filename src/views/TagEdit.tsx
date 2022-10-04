@@ -1,4 +1,6 @@
 import { Button } from "components/Button"
+import { Center } from "components/Center"
+import { Gap } from "components/Gap"
 import { Icon } from "components/Icon"
 import { Input } from "components/Input"
 import { Layout } from "components/Layout"
@@ -30,11 +32,13 @@ const TagEdit: React.FC = (props) => {
                 <Icon />
             </Topbar>
             <InputWrapper>
-                <Input label="标签名" type="text" placeholder={tag.name} />
+                <Input label="标签名" type="text" placeholder="可以写标签名"
+                    value={tag.name} />
             </InputWrapper>
-            <div>
+            <Center>
+                <Gap /><Gap /><Gap />
                 <Button>删除标签</Button>
-            </div>
+            </Center>
         </Layout>
     )
 }
