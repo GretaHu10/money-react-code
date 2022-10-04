@@ -1,4 +1,6 @@
 import { Button } from "components/Button";
+import { Center } from "components/Center";
+import { Gap } from "components/Gap";
 import { Icon } from "components/Icon";
 import { Layout } from "components/Layout";
 import { Topbar } from "components/Topbar";
@@ -25,19 +27,8 @@ const TagList = styled.ol`
                 height: 1em;
                 fill:#333;
             }
-        }
-        
+        }       
     }
-`
-
-const Center = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center ;
-`
-const Gap = styled.div`
-    height: 16px;
 `
 
 function Tags() {
