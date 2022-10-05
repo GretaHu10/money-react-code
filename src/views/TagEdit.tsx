@@ -21,9 +21,9 @@ type Params = {
     id: string
 }
 const TagEdit: React.FC = (props) => {
-    const { findTag } = useTags()
-    let { id } = useParams<Params>()
-    const tag = findTag(parseInt(id!))
+    const { findTag, updateTag } = useTags()
+    let { id: idstring } = useParams<Params>()
+    const tag = findTag(parseInt(idstring!))
     return (
         <Layout>
             <Topbar>
@@ -32,8 +32,11 @@ const TagEdit: React.FC = (props) => {
                 <Icon />
             </Topbar>
             <InputWrapper>
-                <Input label="标签名" type="text" placeholder="可以写标签名"
-                    value={tag.name} />
+                <Input label="标签名" type="text" placeholder="可以写标签名啦"
+                    value={tag.name}
+                    onChange={(e) => {
+                        updateTag(tag.id, { name: e.target.value })
+                    }} />
             </InputWrapper>
             <Center>
                 <Gap /><Gap /><Gap />
