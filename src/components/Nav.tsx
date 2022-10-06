@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { Center } from "./Center";
 import { Icon } from "./Icon";
 
 
@@ -17,12 +18,14 @@ line-height: 24px;
       padding: 5px 0 3px 0;
       flex-direction: column;
       align-items: center;
-      > .icon{
-        fill: #333;
+      > div{
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
       }
       &.active{
-        .icon{
-          fill: #f8d02d;
+        div{
+          background: #f8d02d;
         }
       }
     } 
@@ -36,21 +39,27 @@ const Nav = () => {
         <li>
           <NavLink to="/tags" className={({ isActive, isPending }) =>
             isActive ? "active" : isPending ? "pending" : ""}>
-            <Icon name="tag" />
+            <Center>
+              <Icon name="tag" />
+            </Center>
             标签
           </NavLink>
         </li>
         <li>
           <NavLink to="/money" className={({ isActive, isPending }) =>
             isActive ? "active" : isPending ? "pending" : ""}>
-            <Icon name="money" />
+            <Center>
+              <Icon name="money" />
+            </Center>
             记账
           </NavLink>
         </li>
         <li>
           <NavLink to="/statistics" className={({ isActive, isPending }) =>
             isActive ? "active" : isPending ? "pending" : ""}>
-            <Icon name="chart" />
+            <Center>
+              <Icon name="chart" />
+            </Center>
             统计
           </NavLink>
         </li>
