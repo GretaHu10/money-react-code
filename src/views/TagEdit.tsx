@@ -5,6 +5,7 @@ import { Icon } from "components/Icon"
 import { Input } from "components/Input"
 import { Layout } from "components/Layout"
 import { Topbar } from "components/Topbar"
+// import { useNavigate } from "react-router-dom"
 import { useParams } from "react-router-dom"
 import styled from "styled-components"
 import { useTags } from "useTags"
@@ -34,10 +35,17 @@ const TagEdit: React.FC = (props) => {
             </InputWrapper>
         </div>
     )
+    // const history = useNavigate()
+    // const onClickBack = () => {
+    //     history(-1)
+    // }
+    const onClickBack = () => {
+        window.history.back()
+    }
     return (
         <Layout>
             <Topbar>
-                <Icon name="left" />
+                <Icon name="left" onClick={onClickBack} />
                 <div>编辑标签</div>
                 <Icon />
             </Topbar>
