@@ -8,7 +8,7 @@ import { Topbar } from "components/Topbar"
 import { useNavigate } from "react-router-dom"
 import { useParams } from "react-router-dom"
 import styled from "styled-components"
-import { useTags } from "useTags"
+import { useTags } from "hooks/useTags"
 
 const InputWrapper = styled.div`
     background:white;

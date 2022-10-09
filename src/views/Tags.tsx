@@ -6,7 +6,7 @@ import { Layout } from "components/Layout";
 import { Topbar } from "components/Topbar";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { useTags } from "useTags";
+import { useTags } from "hooks/useTags";
 
 
 const TagList = styled.ol`
