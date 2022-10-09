@@ -20,7 +20,7 @@ type Params = {
     id: string
 }
 
-const TagEdit: React.FC = () => {
+const TagEdit: React.FC = (props) => {
     const { findTag, updateTag, deleteTag } = useTags()
     let { id: idstring } = useParams<Params>()
     const tag = findTag(parseInt(idstring!))
