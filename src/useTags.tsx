@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 const useTags = () => {
     const [tags, setTags] = useState<{ id: number; name: string }[]>([]);
+
     useEffect(() => {
         let localTags = JSON.parse(window.localStorage.getItem('tags') || '[]')
         if (localTags.length === 0) {
@@ -18,6 +19,8 @@ const useTags = () => {
         }
         setTags(localTags)
     }, [])
+    // 组件挂载时执行，两次执行分别是从 undefined 变为 [] ,第二次从 localStorage 取数据
+
 
     useUpdate(() => {
         window.localStorage.setItem('tags', JSON.stringify(tags))
@@ -42,7 +45,7 @@ const useTags = () => {
     }
     const addTag = () => {
         const tagName = window.prompt('请输入标签名')
-        if (tagName !== null) {
+        if (tagName !== null && tagName !== '') {
             setTags([...tags, { id: createId(), name: tagName }])
         }
     };

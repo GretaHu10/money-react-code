@@ -10,4 +10,4 @@ export const useUpdate = (fn: () => void, deps: any[]) => {
             fn()
         }
     }, deps)
-}
+}   //防止多次
