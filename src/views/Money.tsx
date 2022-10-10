@@ -13,16 +13,18 @@ const MyLayout = styled(Layout)`
   flex-direction: column;
 `
 type Category = '-' | '+'
+const defaultFormDate = {
+  category: '-' as Category,
+  tagIds: [] as number[],
+  note: '',
+  amount: 0
+}
 
 function Money() {
-  const [selected, setSelected] = useState({
-    category: '-' as Category,
-    tagIds: [] as number[],
-    note: '',
-    amount: 0
-  })
-
+  console.log('Money 执行了')
+  const [selected, setSelected] = useState(defaultFormDate)
   const { records, addRecord } = useRecords()
+
   console.log('records')
   console.log(records)
 
@@ -32,6 +34,8 @@ function Money() {
 
   const submit = () => {
     addRecord(selected)
+    alert('记好啦')
+    setSelected(defaultFormDate)
   }
 
   return (
