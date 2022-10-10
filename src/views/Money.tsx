@@ -21,26 +21,21 @@ const defaultFormDate = {
 }
 
 function Money() {
-  console.log('Money 执行了')
   const [selected, setSelected] = useState(defaultFormDate)
   const { records, addRecord } = useRecords()
-
-  console.log('records')
-  console.log(records)
 
   const onChange = (obj: Partial<typeof selected>) => {
     setSelected({ ...selected, ...obj })
   }
 
   const submit = () => {
-    addRecord(selected)
-    alert('记好啦')
-    setSelected(defaultFormDate)
+    if (addRecord(selected)) {
+      alert('记好啦')
+      setSelected(defaultFormDate)
+    }
   }
-
   return (
     <MyLayout>
-      {JSON.stringify(selected)}
       <CategorySection
         value={selected.category}
         onChange={category => onChange({ category })} />

@@ -5,8 +5,10 @@ type RecordItem = {
     tagIds: number[]
     note: string
     category: '+' | '-'
-    amount: number
+    amount: number,
+    createdAt: string //ISO 8601
 }
+type newRecordItem = Omit<RecordItem, 'createdAt'>
 
 export const useRecords = () => {
     const [records, setRecords] = useState<RecordItem[]>([])
@@ -18,7 +20,16 @@ export const useRecords = () => {
         window.localStorage.setItem('records', JSON.stringify(records))
     }, [records])
 
-    const addRecord = (record: RecordItem) => {
+    const addRecord = (newRecord: newRecordItem) => {
+        if (newRecord.amount <= 0) {
+            alert('多少钱呢？')
+            return false
+        }
+        if (newRecord.tagIds.length === 0) {
+            alert('选一下标签啦')
+            return false
+        }
+        const record = { ...newRecord, createdAt: (new Date()).toISOString() }
         setRecords([...records, record])
     }
 
