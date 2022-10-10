@@ -1,4 +1,5 @@
 import { Layout } from "components/Layout";
+import { useRecords } from "hooks/useRecord";
 import { useState } from "react";
 import styled from "styled-components";
 import { CategorySection } from "./Money/CategorySection";
@@ -20,11 +21,22 @@ function Money() {
     note: '',
     amount: 0
   })
+
+  const { records, addRecord } = useRecords()
+  console.log('records')
+  console.log(records)
+
   const onChange = (obj: Partial<typeof selected>) => {
     setSelected({ ...selected, ...obj })
   }
+
+  const submit = () => {
+    addRecord(selected)
+  }
+
   return (
     <MyLayout>
+      {JSON.stringify(selected)}
       <CategorySection
         value={selected.category}
         onChange={category => onChange({ category })} />
@@ -37,7 +49,7 @@ function Money() {
       <NumberPadSection
         value={selected.amount}
         onChange={amount => onChange({ amount })}
-        onOk={() => { }} />
+        onOk={submit} />
     </MyLayout>
   )
 }
