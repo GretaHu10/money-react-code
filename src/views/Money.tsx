@@ -1,5 +1,5 @@
 import { Layout } from "components/Layout";
-import { useRecords } from "hooks/useRecord";
+import { useRecords } from "hooks/useRecords";
 import { useState } from "react";
 import styled from "styled-components";
 import { CategorySection } from "./Money/CategorySection";
