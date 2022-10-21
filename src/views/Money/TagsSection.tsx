@@ -24,21 +24,13 @@ box-shadow: 0 0 3px rgba(255,255,255,0.25);
     }
   }
 }
-> button{
-  margin-top: 8px;
-  background: none;
-  border: none;
-  padding: 2px 4px;
-  border-bottom: 1px solid #333;
-  color: #666;
-}
 `
 type Props = {
   value: number[],
   onChange: (selected: number[]) => void //参数空，返回值空
 }
 const TagsSection: React.FC<Props> = (props) => {
-  const { tags, addTag } = useTags()
+  const { tags } = useTags()
   const selectedTagIds = props.value
 
   const onToggleTag = (tagId: number) => {
@@ -61,7 +53,6 @@ const TagsSection: React.FC<Props> = (props) => {
           </li>
         )}
       </ol>
-      <button onClick={addTag}>新增标签</button>
     </Wrapper>
   )
 }

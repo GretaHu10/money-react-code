@@ -19,12 +19,6 @@ const Wrapper = styled.ul`
         left: 0;
        }
     }
-  > span{
-    font-size: 16px;
-    position: absolute;
-    right: 10px;
-    bottom: 8px;
-  }
 `
 
 type Props = {

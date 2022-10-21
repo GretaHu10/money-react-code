@@ -2,7 +2,7 @@ import { Layout } from "components/Layout";
 import { useRecords } from "hooks/useRecords";
 import { useState } from "react";
 import styled from "styled-components";
-import { CategorySection } from "./Money/CategorySection";
+import { CategorySection } from "../components/CategorySection";
 import { NoteSection } from "./Money/NoteSection";
 import { NumberPadSection } from "./Money/NumberPadSection";
 import { TagsSection } from "./Money/TagsSection";
