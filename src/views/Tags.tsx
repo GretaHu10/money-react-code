@@ -8,6 +8,9 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useTags } from "hooks/useTags";
 
+const MyTopbar = styled(Topbar)`
+   padding-bottom: 8px; 
+`
 
 const TagList = styled.ol`
     margin-top: 8px;
@@ -35,9 +38,9 @@ function Tags() {
     const { tags, addTag } = useTags()
     return (
         <Layout>
-            <Topbar>
+            <MyTopbar>
                 <div>标签列表</div>
-            </Topbar>
+            </MyTopbar>
             <TagList>
                 {tags.map(tag =>
                     <li key={tag.id}>

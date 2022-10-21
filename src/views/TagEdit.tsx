@@ -15,6 +15,15 @@ const InputWrapper = styled.div`
     padding: 0px 16px;
     margin-top: 8px;
 `
+const MyTopbar = styled(Topbar)`
+padding-bottom: 8px;
+    > .icon{
+        position: absolute;
+        left:14px;
+        bottom: 8px;
+        width: 0.75em;
+    }
+`
 
 type Params = {
     id: string
@@ -41,10 +50,10 @@ const TagEdit: React.FC = (props) => {
     }
     return (
         <Layout>
-            <Topbar>
+            <MyTopbar>
                 <Icon name="left" onClick={onClickBack} />
                 <div>编辑标签</div>
-            </Topbar>
+            </MyTopbar>
             {tag ? tagContent(tag) : <Center><Gap /><Gap />tag 不存在</Center>}
             <Center>
                 <Gap /><Gap /><Gap />

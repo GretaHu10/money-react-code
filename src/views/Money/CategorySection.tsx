@@ -1,16 +1,11 @@
+import { Topbar } from "components/Topbar";
 import { useState } from "react"
 import styled from "styled-components"
 
-const Wrapper = styled.section`
-background: #f8d02d;
-position: relative;
-  > ul{
-    margin-top: 30px;
-    font-size: 24px;
+const Wrapper = styled.ul`
     display: flex;
-    justify-content: center;   
     > li{
-      padding: 8px 16px;
+      padding: 0px 16px 8px 16px;
       text-align: center;
       position: relative; 
        &.selected::after{
@@ -24,7 +19,6 @@ position: relative;
         left: 0;
        }
     }
-  }
   > span{
     font-size: 16px;
     position: absolute;
@@ -44,16 +38,15 @@ const CategorySection: React.FC<Props> = (props) => {
   const category = props.value
 
   return (
-    <Wrapper>
-      <ul>
+    <Topbar>
+      <Wrapper>
         {categoryList.map(c =>
           <li key={c} className={category === c ? "selected" : ""}
             onClick={() => { props.onChange(c) }}>{categoryMap[c]}
           </li>
         )}
-      </ul>
-      <span>取消</span>
-    </Wrapper>
+      </Wrapper>
+    </Topbar>
   )
 }
 
