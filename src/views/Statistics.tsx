@@ -3,6 +3,7 @@ import { useRecords } from "hooks/useRecords";
 import { useTags } from "hooks/useTags";
 import { useState } from "react";
 import { CategorySection } from "./Money/CategorySection";
+import day from 'dayjs';
 
 const Statistics = () => {
     const [category, setCategory] = useState<'-' | '+'>('-')
@@ -20,7 +21,7 @@ const Statistics = () => {
                         <hr />
                         {r.amount}
                         <hr />
-                        {r.createdAt}
+                        {day(r.createdAt).format('YYYY年MM月DD日')}
                     </div>
                 })}
             </div>
