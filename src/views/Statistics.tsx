@@ -1,7 +1,7 @@
 import { Layout } from "components/Layout";
 import { RecordItem, useRecords } from "hooks/useRecords";
 import { useTags } from "hooks/useTags";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { CategorySection } from "./Money/CategorySection";
 import day from 'dayjs';
 import styled from "styled-components";
@@ -19,6 +19,12 @@ const Item = styled.div`
         color: #999;
     }
 `
+const Header = styled.h3`
+    font-size: 18px;
+    line-height: 20px;
+    padding: 10px 16px;
+`
+
 const Statistics = () => {
     const [category, setCategory] = useState<'-' | '+'>('-')
     const { records } = useRecords()
@@ -40,31 +46,29 @@ const Statistics = () => {
         return 0
     })
 
-    console.log(array)
-
     return (
         <Layout>
             <CategorySection
                 value={category}
                 onChange={value => setCategory(value)} />
             {array.map(([date, records]) => <div>
-                <h3>
+                <Header>
                     {date}
-                </h3>
+                </Header>
                 <div>
                     {records.map(r => {
                         return <Item>
                             <div className="tags">
-                                {r.tagIds.map(tagId => <span key={tagId}>{getName(tagId)}</span>)}
+                                {r.tagIds
+                                    .map(tagId => <span key={tagId}>{getName(tagId)}</span>)
+                                    .reduce((result, span, index, array) => result.concat(index < array.length - 1 ? [span, '、'] : [span]), [] as ReactNode[])
+                                }
                             </div>
                             {r.note && <div className="note">
                                 {r.note}
                             </div>}
                             <div className="amount">
                                 ￥{r.amount}
-                            </div>
-                            <div className="date">
-                                {day(r.createdAt).format('YYYY年MM月DD日')}
                             </div>
                         </Item>
                     })}
